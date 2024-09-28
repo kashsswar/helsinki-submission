@@ -1,4 +1,26 @@
 import { useState } from 'react'
+function Header(props){
+  return(
+    <>
+      <h1>{props.course}</h1>
+    </>
+  )
+}
+
+function Content({content}){
+  return(
+    <>
+      <h2>Content of the course: {content}</h2>
+    </>
+  )
+}
+const Total=(props)=>{
+  return(
+    <>
+     <p>Total :{props.total}</p>
+    </>
+  )
+}
 
 
 
@@ -13,11 +35,15 @@ function App() {
   const excercise3=14
   return (
     <div>
-      <h1>{course}</h1>
-      <p>{part1} {excercise1}</p>
-      <p>{part2} {excercise2}</p>
-      <p>{part3} {excercise3}</p>
-      <p>Numbers of excercises {excercise1 + excercise2 + excercise3}</p>
+    {/* //   <h1>{course}</h1>
+    //   <p>{part1} {excercise1}</p>
+    //   <p>{part2} {excercise2}</p>
+    //   <p>{part3} {excercise3}</p>
+    //   <p>Numbers of excercises {excercise1 + excercise2 + excercise3}</p> */}
+    
+    <Header course={course}/>
+    <Content content={part1}/>
+    <Total total={excercise1+excercise2+excercise3}/>
     </div>
   )
 }
