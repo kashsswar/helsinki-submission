@@ -6,11 +6,22 @@ function Header(props){
     </>
   )
 }
-
-function Content({content}){
+const Part=(props)=>{
   return(
     <>
-      <h2>Content of the course: {content}</h2>
+      <h3>{props.name} {props.excercise}</h3>
+    </>
+  )
+}
+
+function Content(props){
+
+  return(
+    <>
+      {/* <h2>Content of the course: {content}</h2> */}
+      <Part name={props.part1} excercise={props.excercise1}/>
+      <Part name={props.part2} excercise={props.excercise2}/>
+      <Part name={props.part3} excercise={props.excercise3}/>
     </>
   )
 }
@@ -41,9 +52,10 @@ function App() {
     //   <p>{part3} {excercise3}</p>
     //   <p>Numbers of excercises {excercise1 + excercise2 + excercise3}</p> */}
     
-    <Header course={course}/>
-    <Content content={part1}/>
-    <Total total={excercise1+excercise2+excercise3}/>
+    {/* <Header course={course}/> */}
+    <Content part1={part1} excercise1={excercise1} part2={part2} excercise2={excercise2} part3={part3} excercise3={excercise3}/>
+   
+    {/* <Total total={excercise1+excercise2+excercise3}/> */}
     </div>
   )
 }
